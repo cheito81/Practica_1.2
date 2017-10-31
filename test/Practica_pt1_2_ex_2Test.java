@@ -1,4 +1,4 @@
-import ej_3_ADN.ADN_ARN;
+import ej_1_nom_may_vocals.Practica_pt1_2_ex_2;
 import org.junit.Test;
 import static org.junit.Assert.*;
 //imports per fer servir la paramtrització
@@ -12,26 +12,25 @@ import org.junit.runners.Parameterized.Parameters;
  * @author alumne
  */
 @RunWith(Parameterized.class)
-public class ADN_ARNTest {
+public class Practica_pt1_2_ex_2Test {
     @Parameters
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][] {     
-                {"atgcatcgatcag", "AUGCAUCGAUCAG"}, {"atgcatcgatcag", "AUGCAUCGAUCAG"}, {"atgcatcgatcag", "AUGCAUCGAUCAG"}
+                {"test word", "tEst wOrd"}, {"WORD TEST", "WORD TEST"}, {"test", "tEst"}
            });
     }
     private String date;
     private String expected;
      
-    public ADN_ARNTest(String date,String expected) {
+    public Practica_pt1_2_ex_2Test(String date,String expected) {
         this.date=date;
         this.expected=expected;
     }
     
-    
     @Test
-    public void  adnToArnTest() {
-        ADN_ARN result=new ADN_ARN();
-        String res=result.adnToArn(this.date);
+    public void  vowelsToUpperCaseTest() {
+        Practica_pt1_2_ex_2 result=new Practica_pt1_2_ex_2();
+        String res=result.vowelsToUpperCase(this.date);
         assertEquals(this.expected, res);  
     }
 }

@@ -99,7 +99,7 @@ public class NucleotidsPrincipal {
          String result="";
          
    map.put("UCA","S"); // Serine
-  map.put("UCC" , "S" // Serine
+  /*map.put("UCC" , "S"// Serine
   "UCG" , "S", // Serine
   "UCU" , "S", // Serine
   "UUC" , "F", // Phenylalanine

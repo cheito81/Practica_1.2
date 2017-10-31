@@ -12,26 +12,26 @@ import org.junit.runners.Parameterized.Parameters;
  * @author alumne
  */
 @RunWith(Parameterized.class)
-public class ADN_ARNTest {
+public class ARN_ADNTest {
     @Parameters
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][] {     
-                {"atgcatcgatcag", "AUGCAUCGAUCAG"}, {"atgcatcgatcag", "AUGCAUCGAUCAG"}, {"atgcatcgatcag", "AUGCAUCGAUCAG"}
+                {"augcaucgaucag", "ATGCATCGATCAG"}, {"augcaucgaucag", "ATGCATCGATCAG"}, {"augcaucgaucag", "ATGCATCGATCAG"}
            });
     }
     private String date;
     private String expected;
      
-    public ADN_ARNTest(String date,String expected) {
+    public ARN_ADNTest(String date,String expected) {
         this.date=date;
         this.expected=expected;
     }
     
     
     @Test
-    public void  adnToArnTest() {
+    public void  arnToAdn() {
         ADN_ARN result=new ADN_ARN();
-        String res=result.adnToArn(this.date);
+        String res=result.arnToAdn(this.date);
         assertEquals(this.expected, res);  
     }
 }
