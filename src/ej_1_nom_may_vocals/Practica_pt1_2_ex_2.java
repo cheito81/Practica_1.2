@@ -17,7 +17,10 @@ public class Practica_pt1_2_ex_2 {
     public static void main(String[] args) {
         run();
     }
-
+    
+    /**
+    * Main function
+    */
     private static void run() {
         Scanner scan = new Scanner(System.in);
         Map listChars;
@@ -33,7 +36,7 @@ public class Practica_pt1_2_ex_2 {
     }
     
     /**
-    * This function displays a message
+    * Sets consonants to lower case
     * @param word the word to count
     * @return String with the consonants in lower case
     */
@@ -47,7 +50,7 @@ public class Practica_pt1_2_ex_2 {
     }
     
     /**
-    * This function displays a message
+    * Sets vowels to upper case
     * @param word the word to count
     * @return String with the vowels in upper case
     */
@@ -63,7 +66,7 @@ public class Practica_pt1_2_ex_2 {
     }
     
     /**
-    * This function displays a message
+    * Count chars in a string
     * @param word the word to count
     * @return Map with each char and the count
     */
