@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ej_1_nom_may_vocals;
 
 import java.util.HashMap;
@@ -10,8 +5,9 @@ import java.util.Map;
 import java.util.Scanner;
 
 /**
- *
- * @author alumne
+ * This class validate a date and calculate the next day
+ * @version 2.0
+ * @author Anas
  */
 public class Practica_pt1_2_ex_2 {
 
@@ -21,7 +17,10 @@ public class Practica_pt1_2_ex_2 {
     public static void main(String[] args) {
         run();
     }
-
+    
+    /**
+    * Main function
+    */
     private static void run() {
         Scanner scan = new Scanner(System.in);
         Map listChars;
@@ -35,7 +34,12 @@ public class Practica_pt1_2_ex_2 {
         System.out.println("Result word: "+word);
         System.out.println("Count of chars in the word: "+listChars.toString());
     }
-
+    
+    /**
+    * Sets consonants to lower case
+    * @param word the word to count
+    * @return String with the consonants in lower case
+    */
     public static String consonantsToLowerCase(String word) {
         for (int i = 0; i < word.length(); i++) {
             if ((word.charAt(i) != 'A') && (word.charAt(i) != 'E') && (word.charAt(i) != 'I') && (word.charAt(i) != 'O') && (word.charAt(i) != 'U')) {
@@ -44,7 +48,13 @@ public class Practica_pt1_2_ex_2 {
         }
         return word;
     }
-
+    
+    /**
+    * Sets vowels to upper case
+    * @param word the word to count
+    * @return String with the vowels in upper case
+    */
+    
     public static String vowelsToUpperCase(String word) {
         word = word.replaceAll("a", "A");
         word = word.replaceAll("e", "E");
@@ -54,6 +64,12 @@ public class Practica_pt1_2_ex_2 {
  
         return word;
     }
+    
+    /**
+    * Count chars in a string
+    * @param word the word to count
+    * @return Map with each char and the count
+    */
 
     private static Map countChars(String word) {
         String aux = word.replaceAll(" ","");
