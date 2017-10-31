@@ -36,7 +36,7 @@ public class Practica_pt1_2_ex_2 {
         System.out.println("Count of chars in the word: "+listChars.toString());
     }
 
-    private static String consonantsToLowerCase(String word) {
+    public static String consonantsToLowerCase(String word) {
         for (int i = 0; i < word.length(); i++) {
             if ((word.charAt(i) != 'A') && (word.charAt(i) != 'E') && (word.charAt(i) != 'I') && (word.charAt(i) != 'O') && (word.charAt(i) != 'U')) {
                 word = word.replace(word.charAt(i), word.toLowerCase().charAt(i));
