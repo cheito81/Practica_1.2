@@ -217,7 +217,7 @@ map.put("UGU" , "C"); // Cysteine
          
          Scanner scan = new Scanner(System.in);
 
-                   System.out.println("Escribe nucleotidos: ");
+                   System.out.println("Escribe aminoacidos: ");
                    cadena= scan.next();
                    cadena=cadena.trim();
                    cadena=cadena.toUpperCase();
