@@ -45,7 +45,7 @@ public class Practica_pt1_2_ex_2 {
         return word;
     }
 
-    private static String vowelsToUpperCase(String word) {
+    public static String vowelsToUpperCase(String word) {
         word = word.replaceAll("a", "A");
         word = word.replaceAll("e", "E");
         word = word.replaceAll("i", "I");
