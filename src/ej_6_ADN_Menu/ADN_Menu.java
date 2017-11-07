@@ -97,7 +97,7 @@ public class ADN_Menu {
         System.out.println("5 - Sortir");
     }
     
-    private static boolean verifyDNASeq(String seq) {
+    public static boolean verifyDNASeq(String seq) {
         if(seq.length() == 20){
             return seq.matches("^(?!>.*\\n)[ATGC\\n]+");
         }
@@ -106,7 +106,7 @@ public class ADN_Menu {
         }
     }
     
-    private static String reverseString(String s) {
+    public static String reverseString(String s) {
         StringBuilder builder = new StringBuilder(s);
         return builder.reverse().toString();
     }
