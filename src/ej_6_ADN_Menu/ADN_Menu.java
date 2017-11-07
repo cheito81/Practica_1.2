@@ -30,18 +30,18 @@ public class ADN_Menu {
         while (op != 5) {
             menu();
             op = scan.nextInt();
-            if(op>0 && op<5){
+            if (op > 0 && op < 5) {
                 seq = "";
-                while(!verifyDNASeq(seq)){
+                while (!verifyDNASeq(seq)) {
                     System.out.println("Introduix la sequence d'ADN:");
 
                     seq = scan.nextLine();
                 }
             }
-            switch(op){
+            switch (op) {
                 case 1:
                     seq = reverseString(seq);
-                    System.out.println("Sequencia invertida: "+seq);
+                    System.out.println("Sequencia invertida: " + seq);
                     break;
                 case 2:
                     HashMap<Character, Integer> map;
@@ -49,12 +49,12 @@ public class ADN_Menu {
                     Character maxKey = null;
                     int maxValue = 0;
                     for (Map.Entry<Character, Integer> entry : map.entrySet()) {
-                        if(entry.getValue() > maxValue){
+                        if (entry.getValue() > maxValue) {
                             maxKey = entry.getKey();
                             maxValue = entry.getValue();
                         }
                     }
-                    System.out.println("La base que mes es repeteix es "+maxKey+" amb "+maxValue+" repeticions.");
+                    System.out.println("La base que mes es repeteix es " + maxKey + " amb " + maxValue + " repeticions.");
                     break;
                 case 3:
                     HashMap<Character, Integer> maps;
@@ -65,29 +65,33 @@ public class ADN_Menu {
                         minValue = entry.getValue();
                         break;
                     }
-                    
+
                     for (Map.Entry<Character, Integer> entry : maps.entrySet()) {
-                        if(entry.getValue() < minValue){
+                        if (entry.getValue() < minValue) {
                             minKey = entry.getKey();
                             minValue = entry.getValue();
                         }
                     }
-                    System.out.println("La base que menys es repeteix es "+minKey+" amb "+minValue+" repeticions.");
+                    System.out.println("La base que menys es repeteix es " + minKey + " amb " + minValue + " repeticions.");
                     break;
-                case 4:HashMap<Character, Integer> counter;
+                case 4:
+                    HashMap<Character, Integer> counter;
                     counter = countChars(seq);
                     for (Map.Entry<Character, Integer> entry : counter.entrySet()) {
-                        System.out.println(entry.getKey()+ " ==> " +entry.getValue());
+                        System.out.println(entry.getKey() + " ==> " + entry.getValue());
                     }
                     break;
                 default:
-                    System.out.println("Opcio no valida: "+op);
+                    System.out.println("Opcio no valida: " + op);
                     break;
             }
         }
 
     }
 
+    /**
+     * menu Print the menu
+     */
     private static void menu() {
         System.out.println("Escolleix una opcio: ");
         System.out.println("1 - Donar la volta");
@@ -96,25 +100,42 @@ public class ADN_Menu {
         System.out.println("4 - Fer recompte de bases");
         System.out.println("5 - Sortir");
     }
-    
+
+    /**
+     * verifyDNASeq Verify a dna sequence
+     *
+     * @param seq String dna sequence
+     * @return boolean true if the the sequence is correct
+     */
     public static boolean verifyDNASeq(String seq) {
-        if(seq.length() == 20){
+        if (seq.length() == 20) {
             return seq.matches("^(?!>.*\\n)[ATGC\\n]+");
-        }
-        else{
+        } else {
             return false;
         }
     }
-    
+
+    /**
+     * reverseString Invert a string
+     *
+     * @param s String word
+     * @return String with the word inverted
+     */
     public static String reverseString(String s) {
         StringBuilder builder = new StringBuilder(s);
         return builder.reverse().toString();
     }
-    
+
+    /**
+     * countChars
+     *
+     * @param String word
+     * @return HashMap with the char couting
+     */
     private static HashMap countChars(String word) {
-        String aux = word.replaceAll(" ","");
+        String aux = word.replaceAll(" ", "");
         HashMap<Character, Integer> map = new HashMap();
-        
+
         for (int i = 0; i < aux.length(); i++) {
             char c = aux.charAt(i);
             Integer val = map.get(c);
