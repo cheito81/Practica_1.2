@@ -16,7 +16,7 @@ public class ADN_MenuTest {
     @Parameters
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][] {     
-                {"ATGCATCGATCGATCCCGAA", 1, "Test", "tseT"}, {"ATGCATCGATCGATCCCGA", 0, "Second test", "tset dnoceS"}, {"ATGCATFGATCGATCCCGAA", 0, "simple", "elpmis"}
+                {"ATGCATCGATCGATCCCGAA", true, "Test", "tseT"}, {"ATGCATCGATCGATCCCGA", false, "Second test", "tset dnoceS"}, {"ATGCATFGATCGATCCCGAA", false, "simple", "elpmis"}
            });
     }
     private String seq;
@@ -41,6 +41,6 @@ public class ADN_MenuTest {
     @Test
     public void  reverseStringTest() {
         String res=ADN_Menu.reverseString(this.word);
-        assertEquals(this.expected, res);  
+        assertEquals(this.result, res);  
     }
 }
