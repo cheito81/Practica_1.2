@@ -5,50 +5,18 @@ import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.Map;
 import java.util.Scanner;
-import static jdk.nashorn.internal.objects.NativeArray.map;
 
 /**
- *
+ * Programa que te debuelve un nucleotido si ingresas los aminoacidos y viceversa.
  * @author Jose Gimenez
  * @author Anas
  */
 public class NucleotidsPrincipal {
-    
-    /* the options in the main menu of the application 
-     * (i.e. the functional requirements) */
-    //@overwrite
-    private final String [] mainMenuOptions = {
-             "0- Exit", 
-             "1- Pasar de cadena de nucleotidos a aminoacido",
-             "2- Pasar de aminoacidos a cadena de nucleotidos" 
-            
-    };
-	
-    /**
-     * main(). 
-     * Starts up application execution.
-     */
-    public static void main(String[] args) {
-		/* application object */
-		NucleotidsPrincipal myAp = new NucleotidsPrincipal();
-		/* run the application */
-		myAp.run();
-		
-	}
-	
-    /* -------------- methods -------------- */
-    
-    /** run()
-     * runs the application in non-static mode.
-     */	
-	private void run() {	
-            
-             String result="";
-            
-             HashMap<String, String> map = new HashMap<String, String>();
- 
-    map.put("UCA","S"); // Serine
-   map.put("UCC" , "S");  // Serine
+     private HashMap<String, String> map = new HashMap<String, String>();
+
+    public NucleotidsPrincipal() { // hashmap con los nucleotidos y su aminoacido
+   map.put("UCA","S"); // Serine
+  map.put("UCC" , "S");  // Serine
  map.put("UCG" , "S");  // Serine
  map.put("UCU" , "S");  // Serine
  map.put("UUC" , "F");  // Phenylalanine
@@ -111,11 +79,51 @@ map.put("UGU" , "C"); // Cysteine
  map.put("GGC" , "G");  // Glycine
  map.put("GGG" , "G"); // Glycine
  map.put("GGU" , "G");  // Glycine)
+    }
+     
+    
+    /* the options in the main menu of the application 
+     * (i.e. the functional requirements) */
+    //@overwrite
+    private final String [] mainMenuOptions = {
+             "0- Exit", 
+             "1- Pasar de cadena de nucleotidos a aminoacido",
+             "2- Pasar de aminoacidos a cadena de nucleotidos" 
+            
+    };
+    
+         
+
+    
+  
+	
+    /**
+     * main(). 
+     * Starts up application execution.
+     */
+    public static void main(String[] args) {
+		/* application object */
+		NucleotidsPrincipal myAp = new NucleotidsPrincipal();
+		/* run the application */
+		myAp.run();
+		
+	}
+	
+    /* -------------- methods -------------- */
+    
+    /** run()
+     * runs the application in non-static mode.
+     */	
+	public void run() {	
+            
+             String result="";
   
 		/* exit flag */
 		boolean exit = false;
 		/* menu option to execute */
 		int option;
+                Scanner scan = new Scanner(System.in);
+                String cadena="";
 		
 		/* user service loop  */
 		do {
@@ -126,11 +134,23 @@ map.put("UGU" , "C"); // Cysteine
 				case 0: //exit
 					exit = true;  //set the exit flag.
 					break;
-				case 1: result = cadenaToAmino(map);
+				case 1:  
+                                
+                                          System.out.println("Escribe cadena de nucleotidos: ");
+                                          cadena= scan.next();
+                                          cadena=cadena.trim();
+                                          cadena=cadena.toUpperCase();
+                                         result = cadenaToAmino(cadena);
                                          System.out.println("LOS AMINOACIDOS SON: "+result);
 					
 					break;
-				case 2: result = aminoToCadena(map);
+				case 2: 
+        
+                                        System.out.println("Escribe aminoacidos: ");
+                                        cadena= scan.next();
+                                        cadena=cadena.trim();
+                                        cadena=cadena.toUpperCase();
+                                        result = aminoToCadena(cadena);
 					System.out.println("Los nucleotidos son: "+result);
 					break;
 				case 3:
@@ -149,7 +169,7 @@ map.put("UGU" , "C"); // Cysteine
      * shows the application main menu and gets user"s option
      * @return option to execute
      */
-     private int showMainMenu() {
+     public int showMainMenu() {
 		int option=-1;	//option to return	
 		try {
 			Scanner scan = new Scanner(System.in);
@@ -171,18 +191,11 @@ map.put("UGU" , "C"); // Cysteine
  * @param map hashmap con todos los aminoacidos que existen
  * @return result te devuelve los aminoacidos de los nucleotidos introducidos.
  */
-     private String cadenaToAmino( HashMap<String, String> map){
+     public String cadenaToAmino(String cadena){
          
          String valor ="";
-         String cadena="";
          String result="";
-         
-         Scanner scan = new Scanner(System.in);
-
-                   System.out.println("Escribe cadena de nucleotidos: ");
-                   cadena= scan.next();
-                   cadena=cadena.trim();
-                   cadena=cadena.toUpperCase();
+       
                    int j=0;
                    for(int i=0;i<cadena.length()-2 ;i=i + 3){
                         j = i+3;
@@ -209,18 +222,12 @@ map.put("UGU" , "C"); // Cysteine
  * @param map hashmap con todos los aminoacidos que existen
  * @return result te devuelve la cadena de nucleotidos de los aminoacidos introducidos.
  */
-    private String aminoToCadena(HashMap<String, String> map) {
+    public String aminoToCadena(String cadena) {
         
        String valor ="";
-         String cadena="";
-         String result="";
          
-         Scanner scan = new Scanner(System.in);
-
-                   System.out.println("Escribe aminoacidos: ");
-                   cadena= scan.next();
-                   cadena=cadena.trim();
-                   cadena=cadena.toUpperCase();
+         String result="";
+       
                    int j=0;
                    for(int i=0;i<cadena.length();i++){
                         j = i+1;
