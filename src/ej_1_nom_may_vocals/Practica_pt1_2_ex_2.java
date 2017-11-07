@@ -1,7 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ *  programa que demani a l’usuari el seu nom i ens retorni les vocals en majúscules i les consonants en minúsucles. A més a més ens retornarà el recompte de cadascuna de les vocals i consonants que hi conté (nombre d' a’s, d' e’s, etc.) 
+ *
  */
 package ej_1_nom_may_vocals;
 
@@ -10,8 +9,9 @@ import java.util.Map;
 import java.util.Scanner;
 
 /**
- *
- * @author alumne
+ * Practica_pt1_2_ex_2
+ * @author Jose, Anas
+ * @version 1.0, 3/11/2017
  */
 public class Practica_pt1_2_ex_2 {
 
@@ -54,7 +54,11 @@ public class Practica_pt1_2_ex_2 {
  
         return word;
     }
-
+/**
+ * countChars
+ * @param word
+ * @return map
+ */
     private static Map countChars(String word) {
         String aux = word.replaceAll(" ","");
         HashMap<Character, Integer> map = new HashMap();

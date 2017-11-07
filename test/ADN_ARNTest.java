@@ -9,7 +9,7 @@ import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 /**
  *
- * @author alumne
+ * @author Jose, anas
  */
 @RunWith(Parameterized.class)
 public class ADN_ARNTest {

@@ -9,7 +9,7 @@ import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 /**
  *
- * @author alumne
+ * @author Jose, anas
  */
 @RunWith(Parameterized.class)
 public class Practica_pt1_2_ex_2Test {
